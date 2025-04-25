@@ -1,4 +1,5 @@
 # 🎮 TIC-TAC-TOE  
+HTML -- CSS -- JAVASCRIPT
 
 A simple yet addictive game — with *dark theme supremacy* 🌚✨  
 
