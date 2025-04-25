@@ -1,5 +1,5 @@
 # 🎮 TIC-TAC-TOE  
-HTML -- CSS -- JAVASCRIPT
+**HTML | CSS | JavaScript**  
 
 A simple yet addictive game — with *dark theme supremacy* 🌚✨  
 
@@ -24,13 +24,15 @@ A simple yet addictive game — with *dark theme supremacy* 🌚✨
 
 ### **🎨 Theme Philosophy**  
 > *The game is dark-themed because light attracts bugs*  
-> *(Not funny? Fine. `throw new HumorError(404);`)* 😂  
+> *(Not funny? Fine. `throw new HumorError(404);`)* 😂
+ 
 ---
-click to play (〜￣▽￣)〜  https://heroshi-yamada.github.io/TIC-TAC-TOE/
----
-title: Tic-Tac-Toe  
 
-------🐳------
+## **🚀 Quick Start** 
+click to play (〜￣▽￣)〜 https://heroshi-yamada.github.io/TIC-TAC-TOE/
 
-license: mit   
----
+ or run locally:  
+ 
+   ```bash
+   git clone https://github.com/heroshi-yamada/TIC-TAC-TOE.git
+   open index.html
