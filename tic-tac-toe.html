@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - Advanced</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="game.js" defer></script>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-blue-400">Tic Tac Toe</h1>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Game Controls -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-semibold mb-4">Game Settings</h2>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Game Mode</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="modeOffline" class="game-mode-btn bg-blue-500 hover:bg-blue-600 text-white py-2 px-2 rounded transition">Offline</button>
+                        <button id="modeOnline" class="game-mode-btn bg-gray-600 hover:bg-gray-500 text-gray-200 py-2 px-2 rounded transition">Online</button>
+                        <button id="modeComputer" class="game-mode-btn bg-gray-600 hover:bg-gray-500 text-gray-200 py-2 px-2 rounded transition">vs Computer</button>
+                        <button id="newGame" class="game-mode-btn bg-purple-500 hover:bg-purple-600 text-white py-2 px-2 rounded transition">New Game</button>
+                    </div>
+                </div>
+                
+                <div id="computerLevelContainer" class="mb-4 hidden">
+                    <label class="block text-sm font-medium mb-2">Computer Level</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="levelEasy" class="game-mode-btn bg-green-500 hover:bg-green-600 text-white py-2 px-2 rounded transition">Easy</button>
+                        <button id="levelMedium" class="game-mode-btn bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-2 rounded transition">Medium</button>
+                        <button id="levelHard" class="game-mode-btn bg-orange-500 hover:bg-orange-600 text-white py-2 px-2 rounded transition">Hard</button>
+                        <button id="levelImpossible" class="game-mode-btn bg-red-500 hover:bg-red-600 text-white py-2 px-2 rounded transition">Impossible</button>
+                    </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="redPlayer" class="block text-sm font-medium mb-2">Red Player (X)</label>
+                    <input type="text" id="redPlayer" class="w-full p-2 border border-gray-600 rounded bg-gray-700" value="Player 1">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="bluePlayer" class="block text-sm font-medium mb-2">Blue Player (O)</label>
+                    <input type="text" id="bluePlayer" class="w-full p-2 border border-gray-600 rounded bg-gray-700" value="Player 2">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Current Turn</label>
+                    <div id="currentTurn" class="text-lg font-bold text-red-500">Red (X)</div>
+                </div>
+                
+                <button id="resetGame" class="w-full bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded transition">Reset Game</button>
+            </div>
+            
+            <!-- Game Board -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg md:col-span-2">
+                <div id="gameBoard" class="grid grid-cols-3 gap-3 aspect-square">
+                    <!-- Game cells will be generated here -->
+                </div>
+                
+                <div id="gameStatus" class="mt-4 text-center text-lg font-semibold"></div>
+            </div>
+        </div>
+        
+        <!-- Statistics Section -->
+        <div class="mt-8 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-4">Game Statistics</h2>
+            
+            <div class="mb-6">
+                <h3 class="font-medium mb-2">Current Mode: <span id="currentModeDisplay" class="font-bold">Offline</span></h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-red-900/30 p-4 rounded-lg">
+                        <h3 class="font-medium text-red-300">Red (X) Wins</h3>
+                        <p id="redWins" class="text-2xl font-bold">0</p>
+                    </div>
+                    
+                    <div class="bg-blue-900/30 p-4 rounded-lg">
+                        <h3 class="font-medium text-blue-300">Blue (O) Wins</h3>
+                        <p id="blueWins" class="text-2xl font-bold">0</p>
+                    </div>
+                    
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h3 class="font-medium">Draws</h3>
+                        <p id="draws" class="text-2xl font-bold">0</p>
+                    </div>
+                </div>
+                
+                <div class="mt-4 pt-4 border-t border-gray-700">
+                    <h3 class="font-medium">Total Games Played</h3>
+                    <p id="totalGames" class="text-2xl font-bold">0</p>
+                </div>
+            </div>
+            
+            <div id="allStatsContainer" class="hidden">
+                <h3 class="font-medium mb-2">All Modes Statistics</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-medium">Offline Mode</h4>
+                        <p id="offlineStats" class="text-sm">Red: 0, Blue: 0, Draws: 0</p>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-medium">Online Mode</h4>
+                        <p id="onlineStats" class="text-sm">Red: 0, Blue: 0, Draws: 0</p>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <h4 class="font-medium">vs Computer</h4>
+                        <p id="computerStats" class="text-sm">Red: 0, Computer: 0, Draws: 0</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="toggleStats" class="mt-4 text-blue-400 hover:underline">Show All Statistics</button>
+        </div>
+    </div>
+
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;"><img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=hero-yamada/tic-tac-toe-hehe" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a><a href="https://github.com/heroshi-yamada" style="color: #6fd7ff;" target="_blank" > Heroshi Yamada (. ❛ ᴗ ❛.)</a></p></body>
+</html>
