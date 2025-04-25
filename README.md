@@ -25,8 +25,8 @@ A simple yet addictive game — with *dark theme supremacy* 🌚✨
 ### **🎨 Theme Philosophy**  
 > *The game is dark-themed because light attracts bugs*  
 > *(Not funny? Fine. `throw new HumorError(404);`)* 😂  
-
-
+---
+https://heroshi-yamada.github.io/TIC-TAC-TOE/
 ---
 title: Tic-Tac-Toe  
 
