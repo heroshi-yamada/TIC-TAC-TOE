@@ -29,7 +29,7 @@ A simple yet addictive game — with *dark theme supremacy* 🌚✨
 ---
 
 ## **🚀 Quick Start** 
-click to play (〜￣▽￣)〜 https://heroshi-yamada.github.io/TIC-TAC-TOE/
+click to play [(>'-'<)](https://heroshi-yamada.github.io/TIC-TAC-TOE/)
 
  or run locally:  
  
