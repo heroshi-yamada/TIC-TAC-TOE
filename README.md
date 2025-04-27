@@ -1,11 +1,10 @@
 # 🎮 TIC-TAC-TOE  
+
 **HTML | CSS | JavaScript**  
 
 A simple yet addictive game — with *dark theme supremacy* 🌚✨  
 
-
 ---  
-
 
 ### **📝 Notes**  
 
@@ -17,22 +16,17 @@ A simple yet addictive game — with *dark theme supremacy* 🌚✨
   - `New Game`: Resets the board **and** all statistics.  
   - `Reset Game`: Clears the board *without* resetting stats.  
 
-
 ---  
 
-
-
 ### **🎨 Theme Philosophy**  
+
 > *The game is dark-themed because light attracts bugs*  
 > *(Not funny? Fine. `throw new HumorError(404);`)* 😂
  
 ---
 
 ## **🚀 Quick Start** 
+
 click to play [(>'-'<)](https://heroshi-yamada.github.io/TIC-TAC-TOE/)
 
- or run locally:  
- 
-   ```bash
-   git clone https://github.com/heroshi-yamada/TIC-TAC-TOE.git
-   open index.html
+---
